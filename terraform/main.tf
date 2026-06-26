@@ -35,9 +35,8 @@ env_vars = {
     }
   }
 }
-
 resource "render_web_service" "adminer" {
-  name   = "adminer-${var.github_actor}"
+  name   = "adminer-jeannette"
   plan   = "free"
   region = "frankfurt"
 
