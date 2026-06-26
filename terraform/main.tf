@@ -2,7 +2,7 @@ terraform {
   required_providers {
     render = {
       source  = "render-oss/render"
-      version = "1.3.3"
+      version = ">= 1.7.0"
     }
   }
 }
@@ -12,10 +12,21 @@ provider "render" {
   owner_id = var.render_owner_id
 }
 
+variable "github_actor" {
+  description = "GitHub username"
+  type        = string
+}
+
 resource "render_web_service" "flask_app" {
   name   = "flask-render-iac-${var.github_actor}"
   plan   = "free"
   region = "frankfurt"
+
+env_vars = {
+    ENV = {
+      value = "production"
+    }
+  }
 
   runtime_source = {
     image = {
@@ -23,4 +34,5 @@ resource "render_web_service" "flask_app" {
       tag       = var.image_tag
     }
   }
+
 }
