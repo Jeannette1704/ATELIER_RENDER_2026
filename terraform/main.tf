@@ -11,7 +11,6 @@ provider "render" {}
 
 variable "github_actor" {
   type        = string
-  description = "Le nom d'utilisateur GitHub pour rendre le service unique"
 }
 
 resource "render_web_service" "flask_app" {
@@ -28,18 +27,6 @@ resource "render_web_service" "flask_app" {
   runtime_source = {
     image = {
       image_url = "dummy_value_replaced_by_github_actions"
-    }
-  }
-}
-
-resource "render_web_service" "adminer" {
-  name   = "adminer-${var.github_actor}"
-  plan   = "free"
-  region = "frankfurt"
-
-  runtime_source = {
-    image = {
-      image_url = "adminer:latest"
     }
   }
 }
