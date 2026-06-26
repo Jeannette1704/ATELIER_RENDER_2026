@@ -1,13 +1,21 @@
+terraform {
+  required_providers {
+    render = {
+      source  = "render-oss/render"
+      version = "1.3.3"
+    }
+  }
+}
+
+provider "render" {
+  api_key  = var.render_api_key
+  owner_id = var.render_owner_id
+}
+
 resource "render_web_service" "flask_app" {
   name   = "flask-render-iac-${var.github_actor}"
   plan   = "free"
   region = "frankfurt"
-
-  env_vars = {
-    ENV = {
-      value = "production"
-    }
-  }
 
   runtime_source = {
     image = {
