@@ -132,4 +132,4 @@ Cet atelier Render, **noté sur 20 points**, est évalué sur la base du barème
 - Exerice 2 - Modification de Terraform (2 points)
 - Atelier - Plateforme de développement (9 points)
 - Processus travail (quantité de commits, cohérence globale, interventions externes, ...) (3 points) 
-Déploiement initial
+Titiana Jeannette
