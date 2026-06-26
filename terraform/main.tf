@@ -35,6 +35,7 @@ env_vars = {
     }
   }
 }
+
 resource "render_web_service" "adminer" {
   name   = "adminer-jeannette"
   plan   = "free"
@@ -42,7 +43,8 @@ resource "render_web_service" "adminer" {
 
   runtime_source = {
     image = {
-      image_url = "adminer:latest"
+      image_url = "adminer"
+      tag       = "latest"
     }
   }
 }
